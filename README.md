@@ -41,6 +41,15 @@ To test the project, run:
 
     flutter test
 
+To check test coverage, run:
+
+    flutter test --coverage
+    genhtml coverage/lcov.info -o coverage/html
+
+> The `flutter test --coverage` command will generate a `lcov.info` file, you will need to install the [LCOV][] program to convert (`genhtml ...`) the report to an HTML file (human readable).
+
+[LCOV]: http://ltp.sourceforge.net/coverage/lcov.php
+
 ## License
 
 Copyright © 2019 | Chinnon Santos | MIT
