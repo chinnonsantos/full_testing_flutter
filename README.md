@@ -1,16 +1,46 @@
-# full_testing_flutter
+# Flutter App's simplest automated full test
 
-A new Flutter project.
+This project shows an example of the main forms of automated testing in Flutter mobile App, being:
 
-## Getting Started
+- [Unitary][] (including [mocking][] on unitary);
+- [Widgets][];
+- [Integration][] (or assertion).
 
-This project is a starting point for a Flutter application.
+Using native libraries or recommended by official Flutter documentation (Google).
 
-A few resources to get you started if this is your first Flutter project:
+> Note that everything here fits within the guidelines set out in [Effective Dart][].
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+[Unitary]: https://flutter.dev/docs/cookbook/testing/unit/introduction
+[mocking]: https://flutter.dev/docs/cookbook/testing/unit/mocking
+[Widgets]: https://flutter.dev/docs/cookbook/testing/widget/introduction
+[Integration]: https://flutter.dev/docs/cookbook/testing/integration/introduction
+[Effective Dart]: https://www.dartlang.org/guides/language/effective-dart
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Prerequisites
+
+You will need [Flutter][] framework 1.9.1+hotfix.6 or above installed.
+
+> The Dart SDK **is not required** because Flutter has _[Dart language][]_ support as an integrated tool in the framework.
+
+[Flutter]: https://flutter.dev/
+[Dart language]: https://dart.dev/
+
+**Libraries:**
+
+- [test][] 1.6.3
+- [provider][] 3.1.0+1
+- [pedantic][] 1.8.0+1 (dev)
+
+[test]: https://pub.dev/packages/test
+[provider]: https://pub.dev/packages/provider
+[pedantic]: https://pub.dev/packages/pedantic
+
+## Running tests
+
+To test the project, run:
+
+    flutter test
+
+## License
+
+Copyright © 2019 | Chinnon Santos | MIT
