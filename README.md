@@ -1,6 +1,8 @@
 # Flutter App's simplest automated full test
 
-This project shows an example of the main forms of automated testing in Flutter mobile App, being:
+[![Codemagic build status](https://api.codemagic.io/apps/5ddbe31c011bc93c37050c9f/5ddbe31c011bc93c37050c9e/status_badge.svg)](https://codemagic.io/apps/5ddbe31c011bc93c37050c9f/5ddbe31c011bc93c37050c9e/latest_build)
+
+This project shows an example of the main forms of automated testing in Flutter mobile App, including integration into a [CI/CD platform][], as follows:
 
 - [Unitary][] (including [mocking][] on unitary);
 - [Widgets][];
@@ -10,11 +12,31 @@ Using native libraries or recommended by official Flutter documentation (Google)
 
 > Note that everything here fits within the guidelines set out in [Effective Dart][].
 
+[CI/CD platform]: https://en.wikipedia.org/wiki/CI/CD
 [Unitary]: https://flutter.dev/docs/cookbook/testing/unit/introduction
 [mocking]: https://flutter.dev/docs/cookbook/testing/unit/mocking
 [Widgets]: https://flutter.dev/docs/cookbook/testing/widget/introduction
 [Integration]: https://flutter.dev/docs/cookbook/testing/integration/introduction
 [Effective Dart]: https://www.dartlang.org/guides/language/effective-dart
+
+## Codemagic - CI for Flutter
+
+At the [Flutter Live][] 2018 conference in London, [Nevercode][] launched their dedicated CI/CD solution for Flutter apps which is known as [Codemagic][].
+
+This project uses **Codemagic for CI/CD**, selected after various analysis and testing with other CI platforms ([Travis CI][], [Codecov][], [Coveralls][]...), which support the Dart language (in some cases only Dart < 2.0), but do not have good support for the Flutter App.
+
+> "Codemagic is the official CI/CD solution dedicated just for Flutter apps."
+> \- Getting Started with Codemagic
+
+See more details about Codemagic in '[Getting Started with Codemagic]'.
+
+[Flutter Live]: https://developers.google.com/events/flutter-live/
+[Nevercode]: https://nevercode.io/
+[Codemagic]: https://codemagic.io/
+[Travis CI]: https://travis-ci.org/
+[Codecov]: https://codecov.io/
+[Coveralls]: https://coveralls.io/
+[Getting Started with Codemagic]: https://blog.codemagic.io/getting-started-with-codemagic/
 
 ## Prerequisites
 
@@ -40,6 +62,14 @@ You will need [Flutter][] framework 1.9.1+hotfix.6 or above installed.
 To test the project, run:
 
     flutter test
+
+To analyze the Dart language code, run:
+
+    flutter analyze
+
+> The [Dart analyzer][] will check your code and look for possible errors.
+
+[Dart analyzer]: https://flutter.dev/docs/testing/debugging#the-dart-analyzer
 
 To check test coverage, run:
 
