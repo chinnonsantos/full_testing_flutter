@@ -43,12 +43,36 @@ To test the project, run:
 
 To check test coverage, run:
 
-    flutter test --coverage
-    genhtml coverage/lcov.info -o coverage/html
+- Run test with `--coverage` flag:
 
-> The `flutter test --coverage` command will generate a `lcov.info` file, you will need to install the [LCOV][] program to convert (`genhtml ...`) the report to an HTML file (human readable).
+      flutter test --coverage
+
+- Convert the LCOV report generated to a readable HTML file:
+
+      genhtml coverage/lcov.info -o coverage/html
+
+  > The **`flutter test --coverage`** command will generate a **`lcov.info`** file, you will need to install the **[LCOV][]** program to convert (**`genhtml ...`**) the report to an HTML file (human readable).
+
+- Open the HTML report (with a Web Browser)
+
+      google-chrome coverage/html/index.html
 
 [LCOV]: http://ltp.sourceforge.net/coverage/lcov.php
+
+To test only **Unit tests** of the project, run:
+
+    flutter test test/unit/
+
+To test only **Widget tests** of the project, run:
+
+    flutter test test/widget/
+
+To test only **Integration** (or assertion) of the project, run:
+
+    flutter drive --target=test_driver/app.dart
+
+> "Unlike unit and widget tests, integration test suites do not run in the same process as the app being tested. Therefore, create two files that reside in the same directory. By convention, the directory is named **`test_driver`**."
+> \- An introduction to integration testing
 
 ## License
 

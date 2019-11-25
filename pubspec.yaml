@@ -24,6 +24,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_driver:
+    sdk: flutter
   # https://pub.dev/packages/pedantic
   pedantic: ^1.8.0+1
 

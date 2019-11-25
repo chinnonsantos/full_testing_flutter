@@ -59,6 +59,7 @@ class MyHomePage extends StatelessWidget {
             Consumer<Counter>(
               builder: (context, counter, child) => Text(
                 '${counter.value}',
+                key: Key('counter'),
                 style: Theme.of(context).textTheme.display1,
               ),
             ),
@@ -75,6 +76,7 @@ class MyHomePage extends StatelessWidget {
         // behavior. We are only calling a function here, and so we don't care
         // about the current value. Without `listen: false`, we'd be rebuilding
         // the whole MyHomePage whenever Counter notifies listeners.
+        key: Key('increment'),
         onPressed: () =>
             Provider.of<Counter>(context, listen: false).increment(),
         tooltip: 'Increment',
