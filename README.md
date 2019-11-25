@@ -71,8 +71,16 @@ To test only **Integration** (or assertion) of the project, run:
 
     flutter drive --target=test_driver/app.dart
 
+_-->> First, be sure to launch an Android Emulator, iOS Simulator, or connect your computer to a real iOS / Android device. **Integration testing needs to be executed on a real system (simulator or device)!**_
+
 > "Unlike unit and widget tests, integration test suites do not run in the same process as the app being tested. Therefore, create two files that reside in the same directory. By convention, the directory is named **`test_driver`**."
 > \- An introduction to integration testing
+
+## Running the APP
+
+To start the mobile App example, run:
+
+    flutter run
 
 ## License
 
