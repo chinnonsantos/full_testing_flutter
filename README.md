@@ -147,6 +147,8 @@ Execute the same process when previous step **"Drive testing on AWS Device Farm 
 
 When you can run local drive testing with Sylph on AWS Device Farm, see [this article] to learn how to configure Codemagic console to automate the process.
 
+![Screenshot from 2019-11-27 09-53-00](https://user-images.githubusercontent.com/3258293/69724965-d71c1900-10fb-11ea-870b-b6d3aab44e2b.png)
+
 [this article]: https://blog.codemagic.io/flutter-ci-cd-with-codemagic-sylph-aws-device-farm/
 
 ## Running the APP
