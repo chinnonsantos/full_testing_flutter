@@ -106,6 +106,49 @@ _-->> First, be sure to launch an Android Emulator, iOS Simulator, or connect yo
 > "Unlike unit and widget tests, integration test suites do not run in the same process as the app being tested. Therefore, create two files that reside in the same directory. By convention, the directory is named **`test_driver`**."
 > \- An introduction to integration testing
 
+## Drive testing on AWS Device Farm with Sylph
+
+To runs Flutter integration tests on real devices in cloud, use the **Sylph**.
+
+- Install Sylph:
+
+      pub global activate sylph
+
+    > For more details see [Sylph][].
+
+- Configure the [AWS CLI][] credentials:
+
+      $ aws configure
+      AWS Access Key ID [None]: YOUR_KEY_ID_HERE
+      AWS Secret Access Key [None]: YOUR_SECRET_ACCESS_KEY_HERE
+      Default region name [None]: us-west-2
+      Default output format [None]: json
+
+    > The AWS Device Farm is only available in Oregon region (**us-west-2**)!
+
+- Run the Sylph:
+
+      sylph
+
+    > Sylph uses the [`sylph.yaml`][] file in this repository to configure and run device on AWS.
+    >> By default, it has only two Android devices (Samsung Galaxy S9+ and Samsung Galaxy J7).
+    >> Running iOS devices requires an [Apple Developer Certificate] (Team ID), We don't cover this steps!
+
+  ![Screenshot from 2019-11-26 16-36-14](https://user-images.githubusercontent.com/3258293/69670720-47cb2300-1073-11ea-8035-1754d43ae395.png)
+
+[Sylph]: https://github.com/mmcc007/sylph
+[AWS CLI]: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+[`sylph.yaml`]: https://github.com/chinnonsantos/full_testing_flutter/blob/master/sylph.yaml
+[Apple Developer Certificate]: https://developer.apple.com/account/#/membership
+
+## Drive testing on Codemagic CI/CD (using AWS Device Farm and Sylph)
+
+Execute the same process when previous step **"Drive testing on AWS Device Farm with Sylph"**.
+
+When you can run local drive testing with Sylph on AWS Device Farm, see [this article] to learn how to configure Codemagic console to automate the process.
+
+[this article]: https://blog.codemagic.io/flutter-ci-cd-with-codemagic-sylph-aws-device-farm/
+
 ## Running the APP
 
 To start the mobile App example, run:

@@ -1,0 +1,48 @@
+# Config file for Flutter tests on real device pools.
+# Auto-creates projects and device pools if needed.
+# Configures android and ios test runs.
+# Builds app, uploads and runs tests.
+# Then monitors tests, returns final pass/fail result and downloads artifacts.
+# Note: assumes the 'aws' command line utility is logged-in.
+
+# sylph config
+tmp_dir: /tmp/sylph
+artifacts_dir: /tmp/sylph_artifacts
+# local timeout per device farm run
+sylph_timeout: 900 # seconds approx
+# run on ios and android pools concurrently (for faster results)
+concurrent_runs: true
+
+# device farm config
+project_name: full_testing_codemagic
+default_job_timeout: 15 # minutes, set at project creation
+
+device_pools:
+
+  - pool_name: Samsung Galaxy
+    pool_type: android
+    devices:
+     - name: Samsung Galaxy S9+ (Unlocked)
+       model: SM-G965U1
+       os: 8.0.0
+     - name: Samsung Galaxy J7 (2018)
+       model: SM-J737U
+       os: 8.0.0
+
+  # - pool_name: iPhone latest
+  #   pool_type: ios
+  #   devices:
+  #     - name: Apple iPhone 11 Pro Max
+  #       model: MWGY2LL/A
+  #       os: 13.1.3
+
+test_suites:
+
+  - test_suite: Only Android tests
+    main: test_driver/app.dart
+    tests:
+      - test_driver/app_test.dart
+    pool_names:
+      - Samsung Galaxy
+      # - iPhone latest
+    job_timeout: 20 # minutes, set per job, over-rides default job timeout above
