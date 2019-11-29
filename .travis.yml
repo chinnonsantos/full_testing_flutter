@@ -11,6 +11,7 @@ before_script:
   - export PATH=$PATH:$PWD/flutter/bin:$PWD/flutter/bin/cache/dart-sdk/bin
   - cd -
   - flutter doctor
+  - chmod +x scripts/flutter_test.sh
 script:
   - set -e # abort CI if an error happens
   - ./scripts/flutter_test.sh
