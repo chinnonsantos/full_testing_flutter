@@ -14,9 +14,7 @@ import 'package:full_testing_flutter/counter.dart';
 
 void main() {
   group('Main page', () {
-
     testWidgets('Counter increments test', (WidgetTester tester) async {
-
       // Build our app and trigger a frame.
       await tester.pumpWidget(
         ChangeNotifierProvider<Counter>.value(
@@ -43,7 +41,6 @@ void main() {
     });
 
     testWidgets('Default text test', (WidgetTester tester) async {
-
       // Build our app and trigger a frame.
       await tester.pumpWidget(
         ChangeNotifierProvider<Counter>.value(
@@ -53,7 +50,8 @@ void main() {
       );
 
       // Verify that our default text is 'You have pushed the button this many times:'.
-      expect(find.text('You have pushed the button this many times:'), findsOneWidget);
+      expect(find.text('You have pushed the button this many times:'),
+          findsOneWidget);
     });
   });
 }
