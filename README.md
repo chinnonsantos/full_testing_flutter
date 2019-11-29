@@ -1,6 +1,6 @@
 # Flutter App's simplest automated full test
 
-[![Codemagic build status](https://api.codemagic.io/apps/5ddbe31c011bc93c37050c9f/5ddbe31c011bc93c37050c9e/status_badge.svg)](https://codemagic.io/apps/5ddbe31c011bc93c37050c9f/5ddbe31c011bc93c37050c9e/latest_build) [![Flutter version](https://img.shields.io/badge/flutter-v1.9.1+hotfix.6-blue?logo=flutter)](https://flutter.dev/docs/get-started/install) [![GitHub license](https://img.shields.io/github/license/chinnonsantos/full_testing_flutter)](https://choosealicense.com/licenses/mit/) [![Twitter follow](https://img.shields.io/twitter/follow/chinnonsantos?label=follow&style=flat&logo=twitter)](https://twitter.com/intent/follow?screen_name=chinnonsantos) [![Slack channel](https://img.shields.io/badge/slack-%23geral-blueviolet?logo=slack)](https://join.slack.com/t/chinnonsantos-nudemo/signup) [![Open source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![Codemagic build status](https://api.codemagic.io/apps/5ddbe31c011bc93c37050c9f/5ddbe31c011bc93c37050c9e/status_badge.svg)](https://codemagic.io/apps/5ddbe31c011bc93c37050c9f/5ddbe31c011bc93c37050c9e/latest_build) [![Travis build status](https://img.shields.io/travis/chinnonsantos/full_testing_flutter/master?logo=travis)](https://travis-ci.org/chinnonsantos/full_testing_flutter) [![Codecov coverage](https://codecov.io/gh/chinnonsantos/full_testing_flutter/branch/master/graph/badge.svg)](https://codecov.io/gh/chinnonsantos/full_testing_flutter) [![Flutter version](https://img.shields.io/badge/flutter-v1.9.1+hotfix.6-blue?logo=flutter)](https://flutter.dev/docs/get-started/install) [![GitHub license](https://img.shields.io/github/license/chinnonsantos/full_testing_flutter)](https://choosealicense.com/licenses/mit/) [![Twitter follow](https://img.shields.io/twitter/follow/chinnonsantos?label=follow&style=flat&logo=twitter)](https://twitter.com/intent/follow?screen_name=chinnonsantos) [![Slack channel](https://img.shields.io/badge/slack-%23geral-blueviolet?logo=slack)](https://join.slack.com/t/chinnonsantos-nudemo/signup) [![Open source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
 This project shows an example of the main forms of automated testing in Flutter mobile App, including integration into a [CI/CD platform][], as follows:
 
@@ -59,17 +59,25 @@ You will need [Flutter][] framework 1.9.1+hotfix.6 or above installed.
 
 ## Running tests
 
-To test the project, run:
+To automatically [formatting][] code, run:
 
-    flutter test
+    flutter format lib test test_driver
 
-To analyze the Dart language code, run:
+[formatting]: https://flutter.dev/docs/development/tools/formatting
+
+To analyzing the Dart language code, run:
 
     flutter analyze
 
 > The [Dart analyzer][] will check your code and look for possible errors.
 
 [Dart analyzer]: https://flutter.dev/docs/testing/debugging#the-dart-analyzer
+
+To [testing] the project, run:
+
+    flutter test
+
+[testing]: https://flutter.dev/docs/testing
 
 To check test coverage, run:
 
@@ -105,6 +113,10 @@ _-->> First, be sure to launch an Android Emulator, iOS Simulator, or connect yo
 
 > "Unlike unit and widget tests, integration test suites do not run in the same process as the app being tested. Therefore, create two files that reside in the same directory. By convention, the directory is named **`test_driver`**."
 > \- An introduction to integration testing
+
+To run **Formatting code** ✔️; **Analyzing code** 🔍; **Unit test code** 🆗; **Widget test** 📲 and **Test coverage** ☔️. everything together ⏲️:
+
+    sh scripts/flutter_test.sh
 
 ## Drive testing on AWS Device Farm with Sylph
 
