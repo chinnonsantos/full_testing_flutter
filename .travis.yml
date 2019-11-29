@@ -1,14 +1,10 @@
-language: bash
+language: shell
 os:
   - linux
   - osx
-jobs:
-  allow_failures:
-    - os: osx
 env:
   - FLUTTER_CHANNEL="stable"
   - FLUTTER_CHANNEL="master"
-sudo: false
 before_script:
   - cd ..
   - git clone https://github.com/flutter/flutter.git -b $FLUTTER_CHANNEL
@@ -23,10 +19,11 @@ script:
   - if [ $FLUTTER_CHANNEL = "stable" ]; then
     bash <(curl -s https://codecov.io/bash);
     fi
-matrix:
+jobs:
   fast_finish: true
   allow_failures:
   - env: FLUTTER_CHANNEL="master"
+  - os: osx
 cache:
   directories:
     - $HOME/.pub-cache
