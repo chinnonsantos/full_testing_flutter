@@ -13,7 +13,7 @@ import 'package:full_testing_flutter/main.dart';
 import 'package:full_testing_flutter/counter.dart';
 
 void main() {
-  group('Main page', () {
+  group('[Widget -> Main page]', () {
     testWidgets('Counter increments test', (WidgetTester tester) async {
       // Build our app and trigger a frame.
       await tester.pumpWidget(
