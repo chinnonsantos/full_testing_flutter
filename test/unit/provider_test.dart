@@ -6,10 +6,10 @@ import 'package:full_testing_flutter/main.dart';
 import 'package:full_testing_flutter/counter.dart';
 
 void main() async {
-  Counter _counterModel;
+  // Counter _counterModel;
 
   setUp(() {
-    _counterModel = Counter();
+    // _counterModel = Counter();
   });
 
   group('[Provider]', () {
