@@ -40,11 +40,12 @@ See more details about Codemagic in '[Getting Started with Codemagic]'.
 
 ## Prerequisites
 
-You will need [Flutter][] framework 1.9.1+hotfix.6 or above installed.
+You will need [Flutter][] framework v1.11.0 or above installed ([Channel beta][], on Linux, locale en_US.UTF-8).
 
 > The Dart SDK **is not required** because Flutter has _[Dart language][]_ support as an integrated tool in the framework.
 
 [Flutter]: https://flutter.dev/
+[Channel beta]: https://github.com/flutter/flutter/wiki/Flutter-build-release-channels#beta
 [Dart language]: https://dart.dev/
 
 **Libraries:**
