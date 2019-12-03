@@ -42,12 +42,7 @@ void main() {
 
     testWidgets('Default text test', (WidgetTester tester) async {
       // Build our app and trigger a frame.
-      await tester.pumpWidget(
-        ChangeNotifierProvider<Counter>.value(
-          value: Counter(),
-          child: MyApp(),
-        ),
-      );
+      await tester.pumpWidget(MyApp());
 
       // Verify that our default text is 'You have pushed the button this many times:'.
       expect(find.text('You have pushed the button this many times:'),

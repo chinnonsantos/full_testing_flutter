@@ -6,12 +6,6 @@ import 'package:full_testing_flutter/main.dart';
 import 'package:full_testing_flutter/counter.dart';
 
 void main() async {
-  Counter _counterModel;
-
-  setUp(() {
-    _counterModel = Counter();
-  });
-
   group('[Provider]', () {
     testWidgets('Update when the value changes', (tester) async {
       final _providerKey = GlobalKey();
