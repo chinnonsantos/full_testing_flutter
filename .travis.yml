@@ -4,7 +4,7 @@ os:
   - osx
 env:
   - FLUTTER_CHANNEL="stable"
-  - FLUTTER_CHANNEL="master"
+  - FLUTTER_CHANNEL="beta"
 before_script:
   - cd ..
   - git clone https://github.com/flutter/flutter.git -b $FLUTTER_CHANNEL
@@ -17,13 +17,13 @@ script:
   - ./scripts/flutter_test.sh
 
   # export coverage
-  - if [ $FLUTTER_CHANNEL = "stable" ]; then
+  - if [ $FLUTTER_CHANNEL = "beta" ]; then
     bash <(curl -s https://codecov.io/bash);
     fi
 jobs:
   fast_finish: true
   allow_failures:
-  - env: FLUTTER_CHANNEL="master"
+  - env: FLUTTER_CHANNEL="stable"
   - os: osx
 cache:
   directories:
