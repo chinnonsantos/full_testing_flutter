@@ -6,10 +6,10 @@ import 'package:full_testing_flutter/main.dart';
 import 'package:full_testing_flutter/counter.dart';
 
 void main() async {
-  // Counter _counterModel;
+  Counter _counterModel;
 
   setUp(() {
-    // _counterModel = Counter();
+    _counterModel = Counter();
   });
 
   group('[Provider]', () {
@@ -29,34 +29,30 @@ void main() async {
       // Check the context test...
       expect(context, equals(_providerKey.currentContext));
 
-      // // Check the initial value provider 0...
-      // expect(Provider.of<Counter>(_providerKey.currentContext).value, 0);
+      /// Only the descendants of the `ChangeNotifierProvider<T>`
+      /// can call `Provider.of<T>`, so find his context...
+      final BuildContext childContext = tester.element(find.byType(MyApp));
 
-      // // Increment value...
-      // Provider.of<Counter>(_providerKey.currentContext).increment();
+      // Check the initial value provider 0...
+      expect(Provider.of<Counter>(childContext).value, 0);
 
-      // // Delay the pump...
-      // await Future.microtask(tester.pump);
+      // Increment value...
+      Provider.of<Counter>(childContext).increment();
 
-      // // Check if incremented value is the same as received...
-      // expect(
-      //   Consumer<Counter>(
-      //     builder: (context, counter, child) => Text('${counter.value}'),
-      //   ),
-      //   _counterModel.value,
-      // );
+      // Delay the pump...
+      await Future.microtask(tester.pump);
 
-      // // Decrement value...
-      // Provider.of<Counter>(context, listen: false).decrement();
+      // Check incremented value...
+      expect(Provider.of<Counter>(childContext).value, 1);
 
-      // // Delay the pump...
-      // await Future.microtask(tester.pump);
+      // Decrement value...
+      Provider.of<Counter>(childContext, listen: false).decrement();
 
-      // // Check if decremented value is the same as received...
-      // expect(
-      //   Provider.of<Counter>(_childKey.currentContext).value,
-      //   _counterModel.value,
-      // );
+      // Delay the pump...
+      await Future.microtask(tester.pump);
+
+      // Check decremented value...
+      expect(Provider.of<Counter>(childContext).value, 0);
     });
   });
 }
