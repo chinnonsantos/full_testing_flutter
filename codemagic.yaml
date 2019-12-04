@@ -2,10 +2,7 @@ workflows:
   test-only-workflow:
     name: Test Only Workflow
     environment:
-      flutter: stable
-    cache:
-      cache_paths:
-        - $FCI_BUILD_DIR/build
+      flutter: beta
     triggering:
       events:
         - push
@@ -16,8 +13,8 @@ workflows:
           source: true
     scripts:
       - flutter packages pub get
-      - flutter analyze
-      - flutter test
+      - flutter analyze --no-pub
+      - flutter test --no-pub
     artifacts:
       - flutter_drive.log
     publishing:
