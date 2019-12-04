@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.chinnonsantos.full_testing_flutter.full_testing_flutter">
+    package="br.com.chinnonsantos.full_testing_flutter">
     <!-- Flutter needs it to communicate with the running application
          to allow setting breakpoints, to provide hot reload, etc.
     -->

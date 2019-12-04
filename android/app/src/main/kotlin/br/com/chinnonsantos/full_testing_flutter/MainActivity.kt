@@ -1,4 +1,4 @@
-package br.com.chinnonsantos.full_testing_flutter.full_testing_flutter
+package br.com.chinnonsantos.full_testing_flutter
 
 import android.os.Bundle
 import io.flutter.app.FlutterActivity

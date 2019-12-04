@@ -21,7 +21,6 @@ script:
     bash <(curl -s https://codecov.io/bash);
     fi
 jobs:
-  fast_finish: true
   allow_failures:
   - env: FLUTTER_CHANNEL="stable"
   - os: osx
