@@ -6,7 +6,6 @@
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
     <application
-        android:name="io.flutter.app.FlutterApplication"
         android:label="full_testing_flutter"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -29,4 +28,7 @@
             </intent-filter>
         </activity>
     </application>
+    <meta-data
+    android:name="flutterEmbedding"
+    android:value="2" />
 </manifest>
