@@ -19,6 +19,12 @@ Using native libraries or recommended by official Flutter documentation (Google)
 [Integration]: https://flutter.dev/docs/cookbook/testing/integration/introduction
 [Effective Dart]: https://www.dartlang.org/guides/language/effective-dart
 
+## Nudemo - Flutter APP + AWS DeviceFarm Automation Tests (Backend in Clojure)
+
+[<img width="1215" alt="Captura de Tela 2024-09-23 às 16 57 46" src="https://github.com/user-attachments/assets/e2bb12c2-72db-413c-8b3a-17bf8793a73b">](https://www.youtube.com/watch?v=cBgz7RTjDeo)
+
+https://hub.docker.com/u/chinnonsantos
+
 ## Codemagic - CI for Flutter
 
 At the [Flutter Live][] 2018 conference in London, [Nevercode][] launched their dedicated CI/CD solution for Flutter apps which is known as [Codemagic][].
